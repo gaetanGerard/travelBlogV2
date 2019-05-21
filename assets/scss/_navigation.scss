@@ -1,0 +1,81 @@
+// *
+// * DEBUT Style du logo 
+// *
+
+@mixin logoShape($margin: 0 0 0 0) {
+    display: flex;
+    align-items: center;
+    width: 120px;
+    height: 40px;
+    margin: $margin;
+    fill: $white-color;
+    transition: $transition;
+    &:hover {
+        fill: $hoverAndFocus-color;
+    }
+}
+
+// *
+// * FIN Style du logo 
+// *
+
+// *
+// * DEBUT Style du navBar
+// *
+
+@mixin navBar-xs {
+    width: $bodyWidth;
+    height: 50px;
+    background-color: $primary-color;
+    position: fixed;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    box-sizing: border-box;
+}
+
+@mixin navContainer {
+    height: $fullSize;
+    width: $fullSize;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+// *
+// * FIN Style du navBar 
+// *
+
+// *
+// * DEBUT Style du menu hamburger
+// *
+
+@mixin hamburgerContainer {
+    width: 26px;
+    height: 40px;
+    margin-left: 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    cursor: pointer;
+    &:hover {
+        span,
+        span::after,
+        span::before {
+            background-color: $hoverAndFocus-color;
+        }
+    }
+}
+
+@mixin hamburgerItem($position : relative, $content: "") {
+    content: $content;
+    width: $fullSize;
+    height: 2px;
+    background-color: $white-color;
+    border-radius: 3px;
+    position: $position;
+    transition: $transition;
+}
+
+// *
+// * FIN Style du menu hamburger 
+// *

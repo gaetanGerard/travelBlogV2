@@ -1,0 +1,52 @@
+// ! le fichier reset me permet de réinitialiser les style par défaut des différents navigateur
+// * le fichier config me sert à stocker les variables que je réutiliserais souvent (couleur, height, width, etc)
+// * le fichier style comporte tout les import de différent partial dans lesquel seront stocker mixin et fonction
+
+@import "reset";
+@import "config";
+@import "navigation";
+
+body {
+    width: $bodyWidth;
+}
+
+.navBrand {
+    @include logoShape(0 10px 0 0);
+}
+
+.navBar {
+    @include navBar-xs;
+    .navContainer {
+        @include navContainer;
+    }
+    .navGroup {
+        width: 0;
+        height: $bodyHeight;
+        background-color: $primary-color;
+        opacity: 1;
+        position: absolute;
+         z-index: -1;
+        top: 0;
+        left: 0;
+        transition: $fasterTransition;
+    }
+    .active {
+        width: 190px;
+    }
+}
+
+.hamburger {
+    @include hamburgerContainer;
+    span {
+        @include hamburgerItem;
+        &::after, &::before {
+            @include hamburgerItem(absolute);
+        }
+        &::before {
+            top: 10px;
+        }
+        &::after {
+            bottom: 10px;
+        }
+    }
+}

@@ -19,25 +19,53 @@
 // * FIN Style du logo 
 // *
 
+
+
+                                                    // !
+                                                    // ! DEBUT Style du menu de navigation responsive (smartphone)
+                                                    // !
+
+
+
 // *
 // * DEBUT Style du navBar
 // *
 
 @mixin navBar-xs {
     width: $bodyWidth;
-    height: 50px;
+    min-height: 50px;
     background-color: $primary-color;
     position: fixed;
     box-shadow: 0 1px 3px rgba(0,0,0,0.3);
     box-sizing: border-box;
+    display: flex;
+    align-items: center;
 }
 
 @mixin navContainer {
     height: $fullSize;
     width: $fullSize;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+}
+
+@mixin navGroup {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    width: 190px;
+    height: $bodyHeight;
+    background-color: $primary-color;
+    opacity: 1;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    transition: $fasterTransition;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    box-sizing: border-box;
+    transform: translateX(-190px);
 }
 
 // *
@@ -73,9 +101,185 @@
     background-color: $white-color;
     border-radius: 3px;
     position: $position;
-    transition: $transition;
+    transition: background-color $transition;
 }
 
 // *
 // * FIN Style du menu hamburger 
 // *
+
+// *
+// * DEBUT Style du contenu du navGroup
+// *
+
+// ? style du formulaire de recherche 
+
+@mixin searchBox {
+    margin-top: 60px;
+    width: $fullSize;
+    display: flex;
+    position: relative;
+    padding: 0 5px;
+    box-sizing: border-box;
+}
+
+@mixin inputField {
+    font-size: $xs-FontSize;
+    max-width: 100%;
+    border:none;
+    border-radius: 50px;
+    padding: 5px 27px 5px 8px;
+    color: $primary-color;
+    letter-spacing: 0;
+
+    &::placeholder {
+        color: lighten($primary-color, 20);
+        font-style: italic;
+    }
+}
+
+@mixin submitBTN {
+    width: 23px;
+    height: 100%;
+    position: absolute;
+    right: 10px;
+    top: 0;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    font-size: $xs-FontSize;
+    cursor: pointer;
+
+    svg {
+        width: 23px;
+        padding: 0;
+        fill: $primary-color;
+        transition: $transition;
+
+        &:hover {
+            fill: $hoverAndFocus-color;
+        }
+    }
+}
+
+// ? Style de la liste de lien vers les différentes pages
+
+@mixin ulNavContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 0 5px;
+    width: $fullSize;
+    box-sizing: border-box;
+    margin: 20px 0;
+}
+
+@mixin navItem {
+    border-bottom: 2px solid $white-color;
+    padding-bottom: 15px;
+    width: $fullSize;
+    font-weight: $mediumFont;
+    transition: $transition;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+
+    a {
+        font-size: $xs-TitleFontSize;
+        color: $white-color;
+        transition: $transition;
+    }
+
+    &:hover {
+        border-color: $hoverAndFocus-color;
+
+        a {
+            color: $hoverAndFocus-color;
+        }
+    }
+}
+
+// ? style du bouton se connecter et s'enregister
+
+@mixin signInContainer {
+    text-align: center;
+    font-size: $md-FontSize;
+    margin-bottom: 20px;
+    color: $white-color;
+}
+
+@mixin btnSignIn {
+    display: inline-block;
+    font-size: $sm-TitleFontSize;
+    color: $white-color;
+    font-weight: $mediumFont;
+    margin-bottom: 10px;
+    padding: 5px 12px;
+    box-sizing: border-box;
+    background-color: $btn-color;
+    border-radius: 50px;
+    transition: $transition;
+
+    &:hover {
+        color: $primary-color;
+        background-color: $hoverAndFocus-color;
+    }
+}
+
+@mixin linkStyle {
+    margin-top: 5px;
+    display: block;
+    color: $white-color;
+    transition: $transition;
+
+    &:hover {
+        color: $hoverAndFocus-color;
+    }
+}
+
+// ? style du container social network
+
+@mixin socialNetworkContainer {
+    padding: 0 5px;
+    color: $white-color;
+}
+
+@mixin title {
+    font-size: $sm-TitleFontSize;
+    padding-bottom: 10px;
+    border-bottom: 2px solid $white-color;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+@mixin socialContainer {
+    display: flex;
+    justify-content: space-around;
+}
+
+@mixin socialLink {
+    display: flex;
+    padding: 5px;
+    width: $sm-TitleFontSize;
+    height: $sm-TitleFontSize;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $white-color;
+    color: $white-color;
+    border-radius: 50%;
+    font-size: $sm-TitleFontSize;
+    box-sizing: border-box;
+    transition: $transition;
+
+    &:hover {
+        color: $hoverAndFocus-color;
+        border-color: $hoverAndFocus-color;
+    }
+}
+
+
+// *
+// * FIN Style du contenu du navGroup
+// *
+
+                                                    // !
+                                                    // ! FIN Style du menu de navigation responsive (smartphone)
+                                                    // !

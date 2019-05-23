@@ -8,6 +8,7 @@
 
 body {
     width: $bodyWidth;
+    font-family: 'Roboto', sans-serif;
 }
 
 .navBrand {
@@ -20,18 +21,47 @@ body {
         @include navContainer;
     }
     .navGroup {
-        width: 0;
-        height: $bodyHeight;
-        background-color: $primary-color;
-        opacity: 1;
-        position: absolute;
-         z-index: -1;
-        top: 0;
-        left: 0;
-        transition: $fasterTransition;
+        @include navGroup;
+        .searchBox {
+            @include searchBox;
+            .inputField {
+                @include inputField;
+            }
+            .submit-btn {
+                @include submitBTN;
+            }
+        }
+        .ulNavContainer {
+            @include ulNavContainer;
+            .navItem {
+                @include navItem;
+            }
+        }
+        .signInContainer {
+            @include signInContainer;
+            .btn {
+                @include btnSignIn;
+            }
+            a {
+                @include linkStyle;
+            }
+        }
+        .socialNetwork {
+            @include socialNetworkContainer;
+            .title {
+                @include title;
+            }
+            .socialContainer {
+                @include socialContainer;
+                a {
+                    @include socialLink;
+                }
+            }
+        }
     }
     .active {
-        width: 190px;
+        transition: $transition;
+        transform: translateX(0);
     }
 }
 
@@ -47,6 +77,18 @@ body {
         }
         &::after {
             bottom: 10px;
+        }
+    }
+}
+
+.closeHamburger {
+    @include hamburgerContainer;
+    span {
+        @include hamburgerItem;
+        transform: rotate(45deg);
+        &::before, &:after {
+            @include hamburgerItem(absolute);
+            transform: rotate(-90deg);
         }
     }
 }

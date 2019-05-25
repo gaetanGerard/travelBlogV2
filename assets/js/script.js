@@ -17,11 +17,11 @@ let slideIndex = 1;
 
 let plusSlides = (n) => {
     showSlides(slideIndex += n);
-}
+};
 
 let currentSlide = (n) => {
     showSlides(slideIndex = n);
-}
+};
 
 let showSlides = (n) => {
     let i;
@@ -41,7 +41,7 @@ let showSlides = (n) => {
     }
     slides[slideIndex-1].style.display = "block";
     dots[slideIndex-1].className += " active";
-}
+};
 
 showSlides();
 

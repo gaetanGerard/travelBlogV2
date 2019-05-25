@@ -1,0 +1,24 @@
+// ? fichier pour gérer la partie responsive du projet
+
+@import "reset";
+@import "config";
+@import "navigation";
+
+
+
+@media screen and (orientation: landscape) {
+    header {
+        .slidesShowContainer {
+            .mySlides {
+                img {
+                    width: 100vw;
+                    height: 100%;
+                }
+                .auteurPostInfosContainer {
+                    left: 50px;
+                    bottom: 20px;
+                }
+            }
+        }
+    }
+}

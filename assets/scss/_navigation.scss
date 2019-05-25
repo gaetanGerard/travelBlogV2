@@ -32,6 +32,7 @@
 // *
 
 @mixin navBar-xs {
+    font-family: "Roboto", sans-serif;
     width: $bodyWidth;
     min-height: 50px;
     background-color: $primary-color;
@@ -40,6 +41,7 @@
     box-sizing: border-box;
     display: flex;
     align-items: center;
+    z-index: 10;
 }
 
 @mixin navContainer {
@@ -242,11 +244,12 @@
     color: $white-color;
 }
 
-@mixin title {
-    font-size: $sm-TitleFontSize;
-    padding-bottom: 10px;
-    border-bottom: 2px solid $white-color;
-    margin-bottom: 20px;
+@mixin title($font-size: $sm-TitleFontSize, $borderBottom: 2px solid $white-color, $color: $white-color, $paddingBottom: 10px, $marginBottom: 20px) {
+    font-size: $font-size;
+    padding-bottom: $paddingBottom;
+    border-bottom: $borderBottom;
+    color: $color;
+    margin-bottom: $marginBottom;
     display: inline-block;
 }
 

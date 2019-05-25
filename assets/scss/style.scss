@@ -5,11 +5,19 @@
 @import "reset";
 @import "config";
 @import "navigation";
+@import "header";
 
 body {
     width: $bodyWidth;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
 }
+
+
+                                        // *
+                                        // *
+                                        // * Style de la navigation 
+                                        // *
+                                        // *
 
 .navBrand {
     @include logoShape(0 10px 0 0);
@@ -92,3 +100,83 @@ body {
         }
     }
 }
+
+                                        // *
+                                        // *
+                                        // * Style du slider
+                                        // *
+                                        // *
+                                        
+header {
+    @include headerGeneralShape;
+    .slidesShowContainer {
+        @include slidesShowContainer;
+        .mySlides {
+            @include slides;
+            .auteurPostInfosContainer {
+                @include auteurPostInfosContainer;
+                .title {
+                    @include titleStyle;
+                }
+                .auteurInfosPost {
+                    @include auteurInfosPost;
+                    .auteurContainer {
+                        @include auteurContainer;
+                        .auteur {
+                            .auteurLink {
+                                @include auteurLink;
+                            }
+                            p {
+                                @include calendar;
+                            }
+                        }
+                        .auteurImg {
+                            @include auteurImgContainer;
+                            img {
+                                @include auteurImg;
+                            }
+                        }
+                    }
+                    .content {
+                        @include contentHiddent;
+                    }
+                }
+            }
+            img {
+               @include mySlidesImg;
+            }
+            .overlay {
+                @include overlay;
+            }
+        }
+        .prev,
+        .next {
+            @include prevNext;
+        }
+        .next {
+            right: 0;
+        }
+
+        .dotContainer {
+            @include dotContainer;
+            .dot {
+                @include dot;
+            }
+
+            .active,
+            .dot:hover {
+                background-color: $hoverAndFocus-color;
+            }
+        }
+
+        .fade {
+            @include fade;
+        }
+    }
+}
+
+                                        // *
+                                        // *
+                                        // * Style du body des pages
+                                        // *
+                                        // *

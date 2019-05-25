@@ -1,0 +1,192 @@
+// *
+// * DEBUT Style du header
+// *
+
+@mixin headerGeneralShape {
+    box-sizing: border-box;
+    height: calc(#{$bodyHeight} - 50px);
+    position: absolute;
+    top: 50px;
+    width: $bodyWidth;
+    font-family: "Roboto",
+    sans-serif;
+}
+
+
+// ? style du container des slides 
+
+@mixin slidesShowContainer {
+    max-width: $bodyWidth;
+    position: relative;
+    margin: auto;
+    height: calc(#{$bodyHeight} - 50px);
+}
+
+// ? Style d'un slider
+
+@mixin slides {
+    display: none;
+    max-height: calc(#{$bodyHeight} - 50px);
+    position: relative;
+    overflow: hidden;
+}
+
+// ? Style de la navigation previous / Next
+
+@mixin prevNext {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: $white-color;
+    font-size: 1.5em;
+    transition: $transition ease;
+    user-select: none;
+
+    &:hover {
+        color: $hoverAndFocus-color;
+    }
+}
+
+// ? Style de la navigation par Dot
+
+@mixin dotContainer {
+    position: absolute;
+    bottom: 5px;
+    width: $bodyWidth;
+    text-align: center;
+
+}
+
+// ? style d'un dot
+
+@mixin dot {
+    cursor: pointer;
+    height: 14px;
+    width: 14px;
+    margin: 0 2px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 1px solid $white-color;
+    display: inline-block;
+    transition: background-color $transition ease;
+}
+
+// ? animation fade entre les slides
+
+@mixin fade {
+    animation-name: fade;
+    animation-duration: $transition;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+// ? style du contenu d'un slide 
+
+@mixin auteurPostInfosContainer {
+    color: $white-color;
+    font-size: $xs-FontSize;
+    position: absolute;
+    left: 15px;
+    bottom: 30px;
+    width: calc(#{$fullSize} - 15px);
+    font-family: "Roboto",
+    sans-serif;
+}
+
+@mixin titleStyle {
+    @include title($sm-TitleFontSize, none, $white-color, 0, 5px);
+    line-height: 1em;
+    font-weight: $mediumFont;
+    transition: $transition;
+
+    &:hover {
+        color: $hoverAndFocus-color;
+    }
+}
+
+// ? style du conteneur entre l'intro et l'auteur à utiliser pour le responsive !!!
+
+@mixin auteurInfosPost {
+    display: grid;
+    grid-template-columns: 45% 55%;
+    font-size: $xs-TinyFontSize;
+    line-height: 1em;
+}
+
+@mixin auteurContainer {
+    display: flex;
+    align-items: center;
+}
+
+@mixin auteurLink {
+    display: flex;
+    margin-bottom: 2px;
+    transition: $transition;
+    color: $white-color;
+
+    &:hover {
+        color: $hoverAndFocus-color;
+    }
+}
+
+@mixin calendar {
+    display: flex;
+
+    i {
+        margin-right: 2px;
+    }
+}
+
+// ? style du conteneur de l'image de l'auteur 
+
+@mixin auteurImgContainer {
+    width: $imageMignature;
+    height: $imageMignature;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    margin-right: 2px;
+}
+
+@mixin auteurImg {
+    min-height: 32px;
+    max-height: calc(#{$imageMignature} * 2);
+}
+
+@mixin contentHiddent($visibility: hidden) {
+    visibility: $visibility;
+}
+
+// ? style de l'image du slide et de son overlay
+
+@mixin mySlidesImg {
+    width: auto;
+    max-height: calc(#{$bodyHeight} - 50px);
+    min-height: calc(#{$bodyHeight} - 50px);
+    object-fit: cover;
+}
+
+@mixin overlay {
+    width: $fullSize;
+    height: $fullSize;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+
+// *
+// * FIN Style du header
+// *

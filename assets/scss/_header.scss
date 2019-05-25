@@ -79,7 +79,7 @@
     animation-duration: $transition;
 }
 
-@-webkit-keyframes fade {
+@keyframes fade {
     from {
         opacity: .4
     }

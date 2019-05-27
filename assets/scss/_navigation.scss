@@ -8,10 +8,16 @@
     width: 120px;
     height: 40px;
     margin: $margin;
-    fill: $white-color;
-    transition: $transition;
-    &:hover {
-        fill: $hoverAndFocus-color;
+    a {
+        svg {
+            width: $fullSize;
+            fill: $white-color;
+            transition: $transition;
+
+            &:hover {
+                fill: $hoverAndFocus-color;
+            }
+        }
     }
 }
 
@@ -45,10 +51,11 @@
 }
 
 @mixin navContainer {
-    height: $fullSize;
+    height: 50px;
     width: $fullSize;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 @mixin navGroup {

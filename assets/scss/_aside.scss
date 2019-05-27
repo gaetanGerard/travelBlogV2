@@ -1,0 +1,196 @@
+// *
+// * DEBUT Style du container aside
+// *
+
+@mixin asideContainer {
+    width: $bodyWidth;
+    height: $fullSize;
+    display: flex;
+    flex-direction: column;
+}
+
+//* DEBUT style article populaire et récent 
+
+@mixin artPopRecContainer {
+    width: $fullSize;
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin titleContainer {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    padding: 5px;
+}
+
+@mixin titleSwitch {
+    cursor: pointer;
+    font-size: $xs-TitleFontSize;
+    font-weight: $mediumFont;
+    color: $primary-color;
+    transition: $transition;
+
+    &::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 2px;
+        margin-top: 5px;
+        background-color: $primary-color;
+        transition: $transition;
+    }
+
+    &:hover {
+        color: $hoverAndFocus-color;
+
+        &::after {
+            width: 100%;
+            background-color: $hoverAndFocus-color
+        }
+    }
+}
+
+@mixin popRecContainer {
+    width: 95%;
+    margin: 0 auto;
+    display: none;
+}
+
+@mixin postPopRec {
+    width: $fullSize;
+    height: 110px;
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+@mixin postImgContainer {
+    min-width: 75px;
+    min-height: 75px;
+    max-width: 75px;
+    max-height: 75px;
+    overflow: hidden;
+    border-radius: 5px;
+    margin-right: 5px;
+
+    .postImg {
+        min-width: 75px;
+        height: 75px;
+        object-fit: cover;
+    }
+}
+
+@mixin postInfos {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin auteurName {
+    font-size: $xs-TinyFontSize;
+    color: $primary-color;
+}
+
+@mixin plus {
+    display: flex;
+    justify-content: flex-end;
+    font-size: $xs-TinyFontSize;
+    @include styleLien($primary-color, underline);
+}
+
+//* DEBUT style catégories
+
+@mixin asideTitle {
+    font-size: $xs-TitleFontSize;
+    font-weight: $mediumFont;
+    color: $primary-color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &::after {
+        content: "";
+        display: block;
+        width: 100px;
+        height: 2px;
+        margin: 10px 0;
+        background-color: $primary-color;
+    }
+}
+
+@mixin categoryLink {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: $md-FontSize;
+    font-weight: $mediumFont;
+    color: $primary-color;
+    transition: $transition;
+
+    .line {
+        width: 150px;
+        height: 2px;
+        display: block;
+        background-color: $primary-color;
+    }
+
+    &:hover {
+        color: $hoverAndFocus-color;
+    }
+}
+
+// * DEBUT style du formulaire newsletter
+
+@mixin inputContainer {
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+    box-sizing: border-box;
+}
+
+@mixin asideInput {
+    width: 100%;
+    margin: 0 auto;
+    border: none;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    padding: 8px 50px 8px 20px;
+    font-size: $md-FontSize;
+    color: $primary-color;
+    box-sizing: border-box;
+
+    &::placeholder {
+        color: lighten($primary-color, 20);
+        font-style: italic;
+    }
+}
+
+@mixin submitBtn {
+    width: 45px;
+    height: 39px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: $btn-color;
+    border:none;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    cursor: pointer;
+    transition: $transition;
+
+    &:hover {
+        background-color: $hoverAndFocus-color;
+    }
+
+    .plane-icon {
+        width: 35px;
+        height: 29px;
+        position: absolute;
+        top: 3px;
+        left: 0;
+
+        path {
+            fill: $white-color;
+        }
+    }
+}

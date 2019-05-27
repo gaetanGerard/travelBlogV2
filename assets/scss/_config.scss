@@ -36,3 +36,16 @@ $regularFont : 400;
 $regularItalicFont: 400i;
 $mediumFont : 500;
 $boldFont : 700;
+
+
+//* Mixin pour le style général des liens
+
+@mixin styleLien($color: $white-color, $textDecoration: none) {
+    transition: $transition;
+    color: $color;
+    text-decoration: $textDecoration;
+
+    &:hover {
+        color: $hoverAndFocus-color;
+    }
+}

@@ -1,3 +1,128 @@
 // *
 // * DEBUT Style des posts
 // *
+
+@mixin post {
+    width: $bodyWidth;
+    height: 320px;
+    position: relative;
+    overflow: hidden;
+}
+
+@mixin postImage {
+    height: $bodyWidth;
+    object-fit: cover;
+    transition: $transition;
+}
+
+@mixin postInfosContainer {
+    width: 98vw;
+    color: $primary-color;
+    padding: 5px;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 5px;
+    left: 1%;
+    background-color: $white-color;
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    font-size: $xs-FontSize;
+}
+
+@mixin auteurTagsSocial {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-between;
+    align-content: end;
+    grid-gap: 4px;
+}
+
+@mixin tagsContainer($jusifyContent: space-between) {
+    display: flex;
+    align-items: center;
+    justify-content: $jusifyContent;
+}
+
+@mixin tagsItem($marginRight: 1.5px, $fontSize: $xxs-FontSize) {
+    font-size: $fontSize;
+    padding: 3px 5px;
+    border: 1px solid $primary-color;
+    border-radius: 10px;
+    margin-right: $marginRight;
+    transition: $transition;
+    text-align: center;
+    &:last-child {
+        margin-right: 0;
+    }
+    a {
+        color: $primary-color;
+        transition: $transition;
+    }
+    &:hover {
+        border-color: $hoverAndFocus-color;
+
+        a {
+            color: $hoverAndFocus-color;
+        }
+    }
+}
+
+@mixin socialPostContainer {
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    grid-gap: 2px;
+    align-content: center;
+}
+
+@mixin socialsItem {
+    font-size: 0.7em;
+    text-align: center;
+    a {
+        color: $primary-color;
+        transition: $transition;
+        &:hover {
+            color: $hoverAndFocus-color;
+        }
+    }
+}
+
+// *
+// * FIN Style des posts
+// *
+
+// *
+// * DEBUT Style des boutons de navigations entre page de posts
+// *
+
+@mixin postPageNav {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+@mixin postNavItem {
+    font-size: $md-FontSize;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 2px;
+    border: 1px solid $primary-color;
+    border-radius: 50%;
+    transition: $transition;
+    &:first-child {
+        margin-left: 0;
+    }
+    a {
+        color: $primary-color;
+        transition: $transition;
+    }
+    &:hover {
+        border-color: $hoverAndFocus-color;
+        a {
+            color: $hoverAndFocus-color;
+        }
+    }
+}

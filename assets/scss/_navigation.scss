@@ -265,15 +265,15 @@
     justify-content: space-around;
 }
 
-@mixin socialLink {
+@mixin socialLink($color: $white-color, $borderColor: $white-color) {
     display: flex;
     padding: 5px;
     width: $sm-TitleFontSize;
     height: $sm-TitleFontSize;
     justify-content: center;
     align-items: center;
-    border: 1px solid $white-color;
-    color: $white-color;
+    border: 1px solid $borderColor;
+    color: $color;
     border-radius: 50%;
     font-size: $sm-TitleFontSize;
     box-sizing: border-box;

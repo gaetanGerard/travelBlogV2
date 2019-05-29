@@ -8,6 +8,7 @@
 @import "header";
 @import "posts";
 @import "aside";
+@import "footer";
 
 body {
     width: $bodyWidth;
@@ -114,6 +115,8 @@ body {
                                         // * Style du slider
                                         // *
                                         // *
+
+        // ! Style du header de la page d'accueil
                                         
 header {
     @include headerGeneralShape;
@@ -189,12 +192,11 @@ header {
                                         // *
                                         // *
 
-        // ! Style du body de la page d'accueil
-
 .contentContainer {
     margin-top: 10px;
     width: $bodyWidth;
     height: $fullSize;
+    // ! Style du body de la page d'accueil
     .postContainer {
         .post {
             @include post;
@@ -251,6 +253,13 @@ header {
             }
         }
     }
+    // ! Style du body de la page Article
+
+
+
+
+
+
     aside {
         @include asideContainer;
         .artPopRecContainer {
@@ -335,7 +344,7 @@ header {
                 }
             }
         }
-        .newsletterContainer {
+        .asideFormContainer {
             @include artPopRecContainer;
             margin: 15px 0;
             .asideTitle {
@@ -349,7 +358,76 @@ header {
                 .submitBtn {
                     @include submitBtn;
                 }
+                .searchSubmit {
+                    background-color: transparent;
+                    .svg-icon { 
+                        path {
+                            fill: $primary-color;
+                            transition: $transition;
+                        }
+                    }
+                    &:hover {
+                        background-color: transparent;
+                        .svg-icon {
+                            path {
+                                fill: $hoverAndFocus-color;
+                            }
+                        }
+                    }
+                }
             }
+        }
+        .socialNetwork {
+            @include artPopRecContainer;
+            display: none;
+            margin-top: 15px;
+            .title {
+                @include asideTitle;
+            }
+            .socialContainer {
+                @include tagsContainer(center);
+                flex-wrap: wrap;
+                width: 95%;
+                margin: 0 auto;
+                .socialLink {
+                    @include socialLink($primary-color, $primary-color);
+                    margin-right: 5px;
+                }
+            }
+        }
+        .searchBox {
+            display: none; // au format smarpthone display none
+        }
+    }
+}
+
+                                        // *
+                                        // *
+                                        // * Style du footer
+                                        // *
+                                        // *
+
+footer {
+    @include footerStyle;
+    .footerContent {
+        @include footerContentStyle;
+        .navigation, .categories {
+            display: none;
+        }
+        .footTitle {
+            @include footerTitle;
+        }
+        a {
+            @include styleLien;
+        }
+        .plus {
+            @include plus;
+            color: $white-color;
+        }
+    }
+    .copyright {
+        p {
+            @include copyright;
         }
     }
 }

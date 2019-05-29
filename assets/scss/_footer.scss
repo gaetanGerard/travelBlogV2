@@ -1,0 +1,35 @@
+// *
+// * DEBUT Style du footer
+// *
+
+@mixin footerStyle {
+    background-color: $primary-color;
+    width: $bodyWidth;
+    max-width: $bodyWidth;
+    color: $white-color;
+    display: grid;
+    grid-template-rows: 90% auto;
+    box-sizing: border-box;
+}
+
+@mixin footerContentStyle {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 5px;
+    font-size: $footerSmartphoneFontSize;
+    padding: 5px;
+}
+
+@mixin footerTitle {
+    font-size: $md-FontSize;
+    font-weight: $mediumFont;
+    text-decoration: underline;
+    margin-bottom: 5px;
+}
+
+@mixin copyright {
+    font-size: $footerSmartphoneFontSize;
+    line-height: $footerSmartphoneFontSize;
+    text-align: center;
+    padding: 5px 0;
+}

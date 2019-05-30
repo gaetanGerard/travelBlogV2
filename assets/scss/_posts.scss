@@ -37,9 +37,9 @@
     grid-gap: 4px;
 }
 
-@mixin tagsContainer($jusifyContent: space-between) {
+@mixin tagsContainer($jusifyContent: space-between, $alignItems: center) {
     display: flex;
-    align-items: center;
+    align-items: $alignItems;
     justify-content: $jusifyContent;
 }
 

@@ -233,10 +233,10 @@
     }
 }
 
-@mixin linkStyle {
+@mixin linkStyle($color: $white-color) {
     margin-top: 5px;
     display: block;
-    color: $white-color;
+    color: $color;
     transition: $transition;
 
     &:hover {

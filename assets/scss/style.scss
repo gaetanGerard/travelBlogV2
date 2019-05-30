@@ -9,6 +9,7 @@
 @import "posts";
 @import "aside";
 @import "footer";
+@import "article";
 
 body {
     width: $bodyWidth;
@@ -193,11 +194,11 @@ header {
                                         // *
 
 .contentContainer {
-    margin-top: 10px;
     width: $bodyWidth;
     height: $fullSize;
     // ! Style du body de la page d'accueil
     .postContainer {
+        margin-top: 10px;
         .post {
             @include post;
             .postImage {
@@ -215,7 +216,7 @@ header {
                                 @include auteurLink($primary-color);
                             }
                             p {
-                                @include calendar;
+                                @include calendar($primary-color);
                             }
                         }
                         .auteurImg {
@@ -254,7 +255,107 @@ header {
         }
     }
     // ! Style du body de la page Article
-
+    .articleContainer {
+        .article {
+            margin-bottom: 10px;
+            .articlePhoto {
+                @include articlePhoto;
+            }
+            .auteurTags {
+                @include auteurTagsSocial;
+                margin-left: 2%;
+                .auteurContainer {
+                    @include auteurContainer;
+                    font-size: $xs-FontSize;
+                    .auteur {
+                        .auteurLink {
+                            @include auteurLink($primary-color);
+                        }
+                        p {
+                            @include calendar($primary-color);
+                            margin-top: 5px;
+                        }
+                    }
+                    .auteurImg {
+                        @include auteurImgContainer($imageMignature-md, 7px);
+                        img {
+                            @include auteurImg($imageMignature-md);
+                        }
+                    }
+                }
+                .tagsContainer {
+                    @include tagsContainer($alignItems: flex-end);
+                    .tagsItem {
+                        @include tagsItem(3px, $fontSize: $footerSmartphoneFontSize);
+                    }
+                }
+            }
+            .title{
+                @include titleStyle($primary-color, $xs-TitleFontSize, $primary-color);
+                margin: 15px 0 15px 2%;
+            }
+            .articleParagraphe {
+                @include articleParagraphe;
+            }
+            .paragrapheWithImage {
+                @include paragrapheWithImage;
+            }
+            .articleImage {
+                @include articleImage;
+            }
+            .subTitle {
+               @include titleStyle($primary-color, $xs-TitleFontSize, $primary-color);
+               margin: 15px 0 15px 2%;
+            }
+            .articleTagsContainer {
+                display: flex;
+                flex-direction: row;
+                .tagsContainer {
+                    @include tagsContainer(flex-start);
+                    margin-left: 5px;
+                    .tagsItem {
+                        @include tagsItem(2px, $fontSize: $footerSmartphoneFontSize);
+                    }
+                }
+            }
+            .navBetweenArticleContainer {
+                margin-top: 10px;
+                @include navBetweenArticleContainer;
+                .prevNavContainer {
+                    @include prevNavContainer;
+                    .prevNavImage {
+                        @include prevNavImage;
+                    }
+                    .prevNavTitleArticleContainer {
+                        @include prevNavArticleContainer;
+                        .title {
+                            @include titleStyle($primary-color, $footerSmartphoneFontSize);
+                            letter-spacing: 0.5;
+                            margin: 0;
+                        }
+                        .prevNavArrow {
+                            @include prevNavArrow;
+                        }
+                    }
+                }
+                .nextArticle {
+                    .prevNavTitleArticleContainer {
+                        align-items: flex-end;
+                    }
+                }
+            }
+            .socialNetwork {
+                @include articleSocial;
+                .socialContainer {
+                    @include socialContainer;
+                    a {
+                        @include socialLink($primary-color, $primary-color);
+                        margin-left: 5px;
+                    }
+                }
+            }
+        }
+    }
 
 
 

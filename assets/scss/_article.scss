@@ -1,0 +1,78 @@
+// *
+// * DEBUT Style d'un article
+// *
+
+@mixin articlePhoto {
+    width: $bodyWidth;
+}
+
+@mixin articleParagraphe {
+    color: $primary-color;
+    line-height: 1em;
+    margin: 7.5px 0 7.5px 2%;
+}
+
+@mixin paragrapheWithImage($flexDirection: column) {
+    display: flex;
+    flex-direction: $flexDirection;
+}
+
+@mixin articleImage($width: $bodyWidth) {
+    width: $width;
+    margin: 7.5px 0;
+}
+
+// *
+// * DEBUT Style de la navigation entre deux article
+// *
+
+@mixin navBetweenArticleContainer {
+    width: $bodyWidth;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+@mixin prevNavContainer {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 5px;
+    margin-left: 10px;
+}
+
+@mixin prevNavImage($size: $prevNavImage-xs) {
+    width: $size;
+    height: $size;
+    border-radius: 5px;
+    overflow: hidden;
+
+    img {
+        width: $fullSize;
+        min-height: $size;
+        object-fit: cover;
+    }
+}
+
+@mixin prevNavArticleContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@mixin prevNavArrow($fontSize : $footerSmartphoneFontSize, $svgWidth : 20px, $svgHeight : 13px) {
+    display: flex;
+    font-size: $fontSize;
+    @include linkStyle($primary-color);
+    justify-content: flex-start;
+    align-items: center;
+
+    svg {
+        width: $svgWidth;
+        height: $svgHeight;
+    }
+}
+
+@mixin articleSocial {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}

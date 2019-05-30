@@ -102,14 +102,14 @@
     sans-serif;
 }
 
-@mixin titleStyle($color: $white-color, $fontSize: $sm-TitleFontSize) {
+@mixin titleStyle($color: $white-color, $fontSize: $sm-TitleFontSize, $hoverColor: $hoverAndFocus-color) {
     @include title($fontSize, none, $color, 0, 5px);
     line-height: 1em;
     font-weight: $mediumFont;
     transition: $transition;
 
     &:hover {
-        color: $hoverAndFocus-color;
+        color: $hoverColor;
     }
 }
 
@@ -138,9 +138,9 @@
     }
 }
 
-@mixin calendar {
+@mixin calendar($color: $white-color) {
     display: flex;
-
+    color: $color;
     i {
         margin-right: 2px;
     }
@@ -148,20 +148,20 @@
 
 // ? style du conteneur de l'image de l'auteur 
 
-@mixin auteurImgContainer {
-    width: $imageMignature;
-    height: $imageMignature;
+@mixin auteurImgContainer($imageSize: $imageMignature, $marginRight: 2px) {
+    width: $imageSize;
+    height: $imageSize;
     border-radius: 50%;
     overflow: hidden;
     display: flex;
-    margin-right: 2px;
+    margin-right: $marginRight;
     align-items: center;
     justify-content: center;
 }
 
-@mixin auteurImg {
+@mixin auteurImg($imageSize: $imageMignature) {
     min-height: 32px;
-    max-height: calc(#{$imageMignature} * 2);
+    max-height: calc(#{$imageSize} * 2);
 }
 
 @mixin contentHiddent($visibility: hidden) {

@@ -517,6 +517,19 @@
                         </div>
                     </div>
                 </div>
+                <form action="comment.php" method="post" class="leaveAComment">
+                    <h2 class="title">Laisser un commentaire :</h2>
+                    <div class="commentInput">
+                        <input type="text" name="pseudo" id="pseudo" class="input pseudo" placeholder="Votre pseudo">
+                        <span class="errorMsg">*** Dummy text who is going to be replace later ***</span>
+                    </div>
+                    <div class="commentInput">
+                        <input type="mail" name="mail" id="mail" class="input mail" placeholder="Votre Email">
+                        <span class="errorMsg">*** Dummy text who is going to be replace later ***</span>
+                    </div>
+                    <textarea name="messageContent" id="messageContent" cols="30" rows="10" class="input messageContent" placeholder="Votre message..."></textarea>
+                    <button type="submit" class="btn">Envoyer</button>
+                </form>
             </div>
             <aside>
                 <form action="search.php" method="post" class="asideFormContainer searchBox">

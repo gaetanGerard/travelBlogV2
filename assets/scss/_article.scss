@@ -76,3 +76,97 @@
     display: flex;
     align-items: center;
 }
+
+// *
+// * DEBUT du style de la section commentaires
+// *
+
+@mixin commentContainer($width : $fullSize, $justifyContent : space-around) {
+    width: $width;
+    display: grid;
+    grid-template-columns: 10% 80%;
+    grid-gap: 20px;
+    justify-content: $justifyContent;
+    margin-top: 20px;
+}
+
+@mixin commentContentContainer {
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 5px;
+    box-sizing: border-box;
+    font-size: $footerSmartphoneFontSize;
+    color: $primary-color;
+    line-height: $xs-FontSize;
+}
+
+@mixin authorNumLike {
+    display: flex;
+    margin-bottom: 5px;
+    justify-content: space-between;
+}
+
+@mixin authorName {
+    font-weight: $mediumFont;
+    font-size: $md-FontSize;
+    margin-bottom: 3px;
+}
+
+@mixin commentIcon {
+    width: $xs-FontSize;
+    height: $xs-FontSize;
+    fill: $primary-color;
+    margin-right: 3px;
+}
+
+@mixin thumbsupReplyBtn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+// *
+// * DEBUT du style du formulaire de commentaire
+// *
+
+@mixin leaveCommentContainer {
+    width: $bodyWidth;
+    height: $fullSize;
+    background-color: $primary-color;
+    padding: 10px;
+    box-sizing: border-box;
+    color: $white-color;
+}
+
+@mixin commentInput {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+@mixin inputForm {
+    padding: 8px 5px;
+    border: none;
+    border-radius: 10px;
+    font-size: $md-FontSize;
+    color: $primary-color;
+
+    &::placeholder {
+        font-style: italic;
+        color: lighten($primary-color, 20);
+    }
+}
+
+@mixin errorMsg {
+    margin-top: 5px;
+    font-style: italic;
+}
+
+@mixin textarea {
+    width: calc(100% - 10px);
+    font-family: "Roboto",
+    sans-serif;
+    font-size: $xs-FontSize;
+    margin-bottom: 10px;
+}

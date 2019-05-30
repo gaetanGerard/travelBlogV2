@@ -215,9 +215,9 @@
     color: $white-color;
 }
 
-@mixin btnSignIn {
+@mixin btnSignIn($fontSize: $sm-TitleFontSize) {
     display: inline-block;
-    font-size: $sm-TitleFontSize;
+    font-size: $fontSize;
     color: $white-color;
     font-weight: $mediumFont;
     margin-bottom: 10px;
@@ -226,7 +226,8 @@
     background-color: $btn-color;
     border-radius: 50px;
     transition: $transition;
-
+    border: none;
+    cursor: pointer;
     &:hover {
         color: $primary-color;
         background-color: $hoverAndFocus-color;

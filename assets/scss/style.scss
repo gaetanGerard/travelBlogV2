@@ -355,6 +355,70 @@ header {
                 }
             }
         }
+        .commentSection {
+            margin-bottom: 10px;
+            .commentContainer {
+                @include commentContainer;
+                .auteurImage {
+                    @include auteurImgContainer($imageMignature-md, 0);
+                    img {
+                        @include auteurImg($imageMignature-md);
+                    }
+                }
+                .commentContentContainer {
+                    @include commentContentContainer;
+                    .AuthorNumLike {
+                        @include authorNumLike;
+                        .title {
+                            @include authorName;
+                        }
+                        .like {
+                            display: flex;
+                        }
+                    }
+                    .comment-icon {
+                        @include commentIcon;
+                    }
+                    .thumbsupReplybutton {
+                        @include thumbsupReplyBtn;
+                        .aimer {
+                            @include linkStyle($primary-color);
+                            display: inline-flex;
+                            margin-top: 0;
+                        }
+                        .replyBtn {
+                            @include btnSignIn($md-FontSize);
+                        }
+                    }
+                }
+            }
+            .subComment {
+                @include commentContainer(85%, space-around);
+                margin-left: 13.5%;
+            }
+        }
+        .leaveAComment {
+            @include leaveCommentContainer;
+            .title {
+                @include titleStyle($hoverColor: $white-color);
+                margin-bottom: 10px;
+            }
+            .commentInput {
+                @include commentInput;
+            }
+            .input {
+                @include inputForm;
+            }
+            .errorMsg {
+                @include errorMsg;
+            }
+            textarea {
+                @include textarea;
+            }
+            .btn {
+                @include btnSignIn($md-FontSize);
+            }
+        }
     }
 
 

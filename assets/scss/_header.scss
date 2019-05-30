@@ -160,7 +160,7 @@
 }
 
 @mixin auteurImg($imageSize: $imageMignature) {
-    min-height: 32px;
+    min-height: $imageSize;
     max-height: calc(#{$imageSize} * 2);
 }
 

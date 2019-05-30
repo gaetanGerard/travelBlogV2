@@ -420,7 +420,70 @@ header {
             }
         }
     }
-
+    // ! Style du body de la page Catégories
+    .categoriesAndPostContainer {
+        .postByCategoriesContainer {
+            margin-top: 10px;
+            .title {
+                @include titleStyle($primary-color, $sm-TitleFontSize, $primary-color);
+                margin: 10px 0;
+            }
+            .post {
+                @include post;
+                .postImage {
+                    @include postImage;
+                }
+                .postInfosContainer {
+                    @include postInfosContainer;
+                    .auteurTagsSocials {
+                        @include auteurTagsSocial;
+                        .auteurContainer {
+                            @include auteurContainer;
+                            font-size: $xxs-FontSize;
+                            .auteur {
+                                .auteurLink {
+                                    @include auteurLink($primary-color);
+                                }
+                                p {
+                                    @include calendar($primary-color);
+                                }
+                            }
+                            .auteurImg {
+                                @include auteurImgContainer;
+                                img {
+                                    @include auteurImg;
+                                }
+                            }
+                        }
+                        .tagsContainer {
+                            @include tagsContainer;
+                            .tagsItem {
+                                @include tagsItem;
+                            }
+                        }
+                        .socialsContainer {
+                            @include socialPostContainer;
+                            .socialsItem {
+                                @include socialsItem;
+                            }
+                        }
+                    }
+                    .title {
+                        @include titleStyle($primary-color, $xs-TitleFontSize);
+                        margin-left: 15px;
+                        margin-bottom: 0;
+                        margin-top: 5px;
+                    }
+                }
+            }
+            .postPageNav {
+                @include postPageNav;
+                .postNavItem {
+                    @include postNavItem;
+                }
+            }
+        }
+    }
 
 
 

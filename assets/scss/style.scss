@@ -10,6 +10,8 @@
 @import "aside";
 @import "footer";
 @import "article";
+@import "categories";
+@import "author";
 
 body {
     width: $bodyWidth;
@@ -195,7 +197,6 @@ header {
 
 .contentContainer {
     width: $bodyWidth;
-    height: $fullSize;
     // ! Style du body de la page d'accueil
     .postContainer {
         margin-top: 10px;
@@ -422,6 +423,40 @@ header {
     }
     // ! Style du body de la page Catégories
     .categoriesAndPostContainer {
+        .categoriesContainer {
+            width: $bodyWidth;
+            .imgHeader {
+                @include imageHeaderContainer;
+                img {
+                    @include imgHeader;
+                }
+                .title {
+                    @include titleHeader;
+                }
+                .overlay {
+                    @include overlay;
+                }
+            }
+            .categoriesGroup {
+                @include categoriesGroup;
+                .catItem {
+                    @include catItem;
+                    img {
+                        @include catItemImg;
+                    }
+                    .catLink {
+                        @include catLink;
+                        span {
+                            margin-top: 20px;
+                        }
+                        &.active {
+                            color: $hoverAndFocus-color;
+                            background-color: rgba($primary-color, 0.5);
+                        }
+                    }
+                }
+            }
+        }
         .postByCategoriesContainer {
             margin-top: 10px;
             .title {
@@ -484,8 +519,23 @@ header {
             }
         }
     }
+    // ! Style du body de la page Auteur
+    .AuteurContainer {
+        width: $bodyWidth;
 
-
+        .imgHeader {
+            @include imageHeaderContainer;
+            img {
+                @include imgHeader;
+            }
+            .title {
+                @include titleHeader;
+            }
+            .overlay {
+                @include overlay;
+            }
+        }
+    }
 
 
     aside {

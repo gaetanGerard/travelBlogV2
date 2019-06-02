@@ -4,7 +4,6 @@
 
 @mixin asideContainer {
     width: $bodyWidth;
-    height: $fullSize;
     display: flex;
     flex-direction: column;
 }

@@ -1,0 +1,67 @@
+// *
+// * DEBUT style de la page des catégories
+// * 
+
+//* DEBUT style image header de la page
+
+@mixin imageHeaderContainer {
+    width: $bodyWidth;
+    position: relative;
+    max-height: $bodyHeight;
+}
+
+@mixin imgHeader {
+    min-height: $bodyHeight;
+    width: $bodyWidth;
+    object-fit: cover;
+}
+
+@mixin titleHeader($colorH: $white-color, $fontSizeH: $sm-TitleFontSize, $hoverColorH: $white-color) {
+    @include titleStyle($colorH, $fontSizeH, $hoverColorH);
+    margin-bottom: 0;
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 35%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+@mixin categoriesGroup {
+    width: $bodyWidth;
+    max-width: $bodyWidth;
+    display: grid;
+    grid-template-columns: auto;
+}
+
+@mixin catItem {
+    width: $bodyWidth;
+    height: 150px;
+    position: relative;
+}
+
+@mixin catItemImg {
+    min-width: $bodyWidth;
+    height: 150px;
+    object-fit: cover;
+}
+
+@mixin catLink {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $fullSize;
+    height: $fullSize;
+    font-size: $sm-TitleFontSize;
+    font-weight: $mediumFont;
+    display: flex;
+    flex-direction: column;
+    color: $white-color;
+    transition: $transition;
+    align-items: center;
+    justify-content: center;
+    &:hover {
+        color: $hoverAndFocus-color;
+        background-color: rgba($primary-color, 0.5);
+    }
+}

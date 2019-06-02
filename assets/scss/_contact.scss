@@ -1,0 +1,26 @@
+// *
+// * DEBUT style de la page des contacts
+// * 
+
+@mixin contactMeContainer {
+    width: $fullSize;
+    display: grid;
+    grid-template-columns: auto;
+    color: $primary-color;
+}
+
+@mixin contactInfos {
+    width: 95%;
+    margin: 10px auto;
+    display: grid;
+    grid-template-columns: auto;
+}
+
+@mixin contactItem {
+    display: grid;
+    grid-template-columns: 10% auto;
+    align-items: center;
+    grid-gap: 10px;
+    margin-bottom: 10px;
+    width: 80%;
+}

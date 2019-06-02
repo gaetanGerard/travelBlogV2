@@ -12,6 +12,7 @@
 @import "article";
 @import "categories";
 @import "author";
+@import "contact";
 
 body {
     width: $bodyWidth;
@@ -571,8 +572,58 @@ header {
                 @include overlay;
             }
         }
+        .contactMeContainer {
+            @include contactMeContainer;
+            .contactInfos {
+                @include contactInfos;
+                .title {
+                    @include titleStyle($primary-color, $sm-TitleFontSize, $primary-color);
+                    margin: 10px 0;
+                    font-weight: $boldFont;
+                }
+                .contactItem {
+                    @include contactItem;
+                    a {
+                        @include linkStyle($primary-color);
+                    }
+                    i {
+                        font-size: $md-FontSize;
+                    }
+                }
+            }
+            .map {
+                width: $bodyWidth;
+                height: $bodyWidth;
+                img {
+                    width: $bodyWidth;
+                    height: $bodyWidth; // ! Style temporaire jusqu'à l'implémentation d'une véritable map !!!
+                    object-fit: cover;
+                }
+            }
+            .leaveAMessage {
+                @include leaveCommentContainer;
+                .title {
+                    @include titleStyle($hoverColor: $white-color);
+                    margin-bottom: 10px;
+                }
+                .commentInput {
+                    @include commentInput;
+                }
+                .input {
+                    @include inputForm;
+                }
+                .errorMsg {
+                    @include errorMsg;
+                }
+                textarea {
+                    @include textarea;
+                }
+                .btn {
+                    @include btnSignIn($md-FontSize);
+                }
+            }
+        }
     }
-
     aside {
         @include asideContainer;
         .artPopRecContainer {

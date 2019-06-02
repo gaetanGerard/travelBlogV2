@@ -1,3 +1,30 @@
 // *
 // * DEBUT Style de la page Auteur
 // *
+
+@mixin authorContent {
+    color: $primary-color;
+    width: 95%;
+    margin: 10px auto;
+    box-sizing: border-box;
+}
+
+@mixin authorImage {
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 15px;
+    position: relative;
+    img {
+        width: 100%;
+        position: absolute;
+        top: -50px;
+    }
+}
+
+@mixin infosItem {
+    margin: 5px 0;
+    display: grid;
+    grid-template-columns: 35% auto;
+    grid-gap: 5px;
+}

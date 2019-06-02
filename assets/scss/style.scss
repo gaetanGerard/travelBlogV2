@@ -522,7 +522,43 @@ header {
     // ! Style du body de la page Auteur
     .AuteurContainer {
         width: $bodyWidth;
-
+        .imgHeader {
+            @include imageHeaderContainer;
+            img {
+                @include imgHeader;
+            }
+            .title {
+                @include titleHeader;
+            }
+            .overlay {
+                @include overlay;
+            }
+        }
+        .authorContent {
+            @include authorContent;
+            .imgInfosAuthor {
+                .authorImg {
+                    @include authorImage;
+                }
+                .authorInfos {
+                    margin-bottom: 10px;
+                    .title {
+                        @include titleStyle($primary-color, $sm-TitleFontSize, $primary-color);
+                        margin: 10px 0;
+                    }
+                    .infosItem {
+                        @include infosItem;
+                        .subTitle {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // ! Style du body de la page Contact
+    .ContactContainer {
+        width: $bodyWidth;
         .imgHeader {
             @include imageHeaderContainer;
             img {
@@ -536,7 +572,6 @@ header {
             }
         }
     }
-
 
     aside {
         @include asideContainer;

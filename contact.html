@@ -166,65 +166,54 @@
     <div class="main">
 
         <div class="contentContainer">
-            <div class="AuteurContainer">
+            <div class="ContactContainer">
                 <div class="imgHeader">
                     <div class="overlay"></div>
-                    <h2 class="title">Auteur</h2>
-                    <img src="assets/images/img_33.jpg" alt="Image de...">
+                    <h2 class="title">Contact</h2>
+                    <img src="assets/images/img_34.jpg" alt="Image de...">
                 </div>
-                <div class="authorContent">
-                    <div class="imgInfosAuthor">
-                        <div class="authorImg">
-                            <img src="assets/images/me.jpg" alt="Image de...">
+                <div class="contactMeContainer">
+                    <div class="contactInfos">
+                        <h2 class="title">Contacter-moi !</h2>
+                        <div class="contactItem">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p class="contactInfosItem">Bangkok, Thailand 10280 SamutPrakan soi sukhumvit 853</p>
                         </div>
-                        <div class="authorInfos">
-                            <h2 class="title">Gérard Gaétan</h2>
-                            <div class="infosItem">
-                                <p class="subTitle">Née : </p>
-                                <p>27/05/1990</p>
-                            </div>
-                            <div class="infosItem">
-                                <p class="subTitle">Originaire : </p>
-                                <p>Belgique</p>
-                            </div>
-                            <div class="infosItem">
-                                <p class="subTitle">Localisation : </p>
-                                <p>Bangkok, Thaïlande</p>
-                            </div>
-                            <div class="infosItem">
-                                <p class="subTitle">Profession : </p>
-                                <p>Développeur web freelance</p>
-                            </div>
-                            <div class="infosItem">
-                                <p class="subTitle">Née : </p>
-                                <p>Cess, Certification webdevelopment sur freecodeCamp,
-                                    Certification udemy, Certification Openclassroom, Auto-Didacte</p>
-                            </div>
-                            <div class="infosItem">
-                                <p class="subTitle">Hobby : </p>
-                                <p>Lecture, Film fantastique/SF/hero, Jeux Vidéo, Coder,
-                                    Voyager</p>
-                            </div>
+                        <div class="contactitem">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+66478710501" class="contactInfosItem">+66 0471 78 05 01</a>
                         </div>
-                        <div class="authorDescription">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet auctor ligula. Ut
-                                malesuada lacus diam, sed commodo sapien mattis et. Duis dictum est ut neque maximus
-                                pretium. Quisque porttitor augue sit amet elementum luctus. Suspendisse potenti. Nam
-                                tempor, sem ut lobortis euismod, mi... neque molestie risus, in iaculis felis augue a
-                                arcu. Ut non velit ac velit mattis vulputate. Ut quis felis et felis tincidunt porttitor
-                                egestas eu magna.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet
-                                auctor ligula. Ut malesuada lacus diam, sed commodo sapien mattis et. Duis dictum est ut
-                                neque maximus pretium. Quisque porttitor augue sit amet elementum luctus. Suspendisse
-                                potenti. Nam tempor, sem ut lobortis euismod, mi... neque molestie risus, in iaculis
-                                felis augue a arcu. Ut non velit ac velit mattis vulputate. Ut quis felis et felis
-                                tincidunt porttitor egestas eu magna.Lorem ipsum dolor sit amet, consectetur adipiscing
-                                elit. Sed sit amet auctor ligula. Ut malesuada lacus diam, sed commodo sapien mattis et.
-                                Duis dictum est ut neque maximus pretium. Quisque porttitor augue sit amet elementum
-                                luctus. Suspendisse potenti. Nam tempor, sem ut lobortis euismod, mi... neque molestie
-                                risus, in iaculis felis augue a arcu. Ut non velit ac velit mattis vulputate. Ut quis
-                                felis et felis tincidunt porttitor egestas eu magna.</p>
+                        <div class="contactitem">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:travelblog@gmail.com" class="contactInfosItem">travelblog@gmail.com</a>
+                        </div>
+                        <div class="contactitem">
+                            <i class="fas fa-globe"></i>
+                            <a href="http://www.travel-blog.com" class="contactInfosItem">http://www.travel-blog.com</a>
                         </div>
                     </div>
+                    <div class="map">
+                        <img src="assets/images/img_35.jpg" alt="Image de..." class="mapTemp">
+                    </div>
+                    <form action="comment.php" method="post" class="leaveAMessage">
+                        <h2 class="title">Contacter moi directement :</h2>
+                        <div class="commentInput">
+                            <input type="text" name="nom" id="nom" class="input nom"
+                                placeholder="Votre Nom*">
+                            <span class="errorMsg">*** Dummy text who is going to be replace later ***</span>
+                        </div>
+                        <div class="commentInput">
+                            <input type="mail" name="mail" id="mail" class="input mail" placeholder="Votre Email*">
+                            <span class="errorMsg">*** Dummy text who is going to be replace later ***</span>
+                        </div>
+                        <div class="commentInput">
+                            <input type="text" name="subject" id="subject" class="input subject" placeholder="Le sujet de votre message">
+                            <span class="errorMsg">*** Dummy text who is going to be replace later ***</span>
+                        </div>
+                        <textarea name="messageContent" id="messageContent" cols="30" rows="10"
+                            class="input messageContent" placeholder="Votre message..."></textarea>
+                        <button type="submit" class="btn">Envoyer</button>
+                    </form>
                 </div>
             </div>
             <aside>

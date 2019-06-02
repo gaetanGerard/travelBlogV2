@@ -8,6 +8,7 @@
     width: $bodyWidth;
     position: relative;
     max-height: $bodyHeight;
+    overflow: hidden;
 }
 
 @mixin imgHeader {

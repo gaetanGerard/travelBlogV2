@@ -12,22 +12,26 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700&display=swap" rel="stylesheet">
 </head>
     <body>
-        <div class="main">
-            <div class="conteneur">
+        <div class="mainBack">
+            <div class="loginConteneur">
                 <div class="imgHeader">
                     <img src="assets/images/img_36.jpg" alt="Image de...">
                 </div>
                 <div class="formConteneur">
-                    <form action="login.php" method="post" class="login">
+                    <form action="login.php" method="post" class="formulaire login">
                         <h2 class="title">Connection</h2>
                         <div class="inputConteneur">
-                            <label for="pseudo"> Pseudo*</label>
-                            <input type="text" name="pseudo" id="pseudo" class="inputBox" placeholder="silverarrow2705">
+                            <div class="input">
+                                <label for="pseudo"> Pseudo*</label>
+                                <input type="text" name="pseudo" id="pseudo" class="inputBox" placeholder="silverarrow2705">  
+                            </div>
                             <span class="errorMsg">*** Just a dummy temporary text ***</span>
                         </div>
                         <div class="inputConteneur">
-                            <label for="password"> Pseudo*</label>
-                            <input type="password" name="password" id="password" class="inputBox" placeholder="*********">
+                            <div class="input">
+                                <label for="password"> Mot de passe*</label>
+                                <input type="password" name="password" id="password" class="inputBox" placeholder="*********">
+                            </div>
                             <span class="errorMsg">*** Just a dummy temporary text ***</span>
                         </div>
                         <div class="submitBtnOrForget">

@@ -2,3 +2,101 @@
 // * DEBUT style de la page de login
 // *
 
+@mixin mainBack {
+    width: $bodyWidth;
+    height: $bodyHeight;
+    overflow: hidden;
+}
+
+@mixin loginContainer {
+    display: grid;
+    grid-template-rows: 50vh 50vh;
+}
+
+@mixin imgHeaderBack {
+    min-height: 50vh;
+    max-height: 50vh;
+    min-width: $bodyWidth;
+    max-width: $bodyWidth;
+    object-fit: cover;
+}
+
+@mixin formConteneur {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: "Roboto",
+    sans-serif;
+    color: $primary-color;
+    overflow: scroll;
+}
+
+@mixin formulaire {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@mixin titleBack {
+    font-weight: $boldFont;
+    font-size: $sm-TitleFontSize;
+    margin: 5px 0;
+
+    &:after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: $primary-color;
+        margin-top: 5px;
+    }
+}
+
+@mixin inputConteneur {
+    display: flex;
+    flex-direction: column;
+    margin: 2.5px auto;
+    width: 90%;
+    min-height: 65.5px;
+    box-sizing: border-box;
+}
+
+@mixin input {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+@mixin inputBox {
+    border: 1px solid $primary-color;
+    box-shadow: 1px 1px 2px rgba($primary-color, 0.3);
+    border-radius: 20px;
+    padding: 8px 10px;
+    font-size: $md-FontSize;
+}
+
+@mixin errorMsg {
+    visibility: hidden;
+    font-size: $xs-TinyFontSize;
+    font-style: italic;
+}
+
+@mixin submitBtnOrForget {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+@mixin formLink {
+    color: $hoverAndFocus-color;
+    transition: $transition;
+    text-decoration: underline;
+
+    &:hover {
+        color: $primary-color;
+    }
+}

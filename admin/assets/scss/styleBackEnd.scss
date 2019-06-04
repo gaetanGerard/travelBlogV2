@@ -1,3 +1,56 @@
 @import "../../../assets/scss/reset";
 @import "../../../assets/scss/config";
+@import "../../../assets/scss/navigation";
 @import "login";
+
+.mainBack {
+    @include mainBack;
+
+    // ! Style de la page de login
+    .loginConteneur {
+        @include loginContainer;
+        .imgHeader {
+            img {
+                @include imgHeaderBack;
+            }
+        }
+        .formConteneur {
+            @include formConteneur;
+            .formulaire {
+                @include formulaire;
+                .title {
+                    @include titleBack;
+                }
+                .inputConteneur {
+                    @include inputConteneur;
+                    .input {
+                        @include input;
+                        .inputBox {
+                            @include inputBox;
+                        }
+                    }
+                    .errorMsg {
+                        @include errorMsg;
+                    }
+                }
+                .submitBtnOrForget {
+                    @include submitBtnOrForget;
+                    .btn {
+                        @include btnSignIn($fontSize: $sm-TitleFontSize);
+                        margin-bottom: 4px;
+                        display: block;
+                    }
+                    .formLink {
+                        @include formLink;
+                    }
+                }
+            }
+            .requiredText {
+                font-size: $footerSmartphoneFontSize;
+                font-style: italic;
+            }
+        }
+    }
+
+    // ! Style de la page mot de passe ou pseudo oublier
+}

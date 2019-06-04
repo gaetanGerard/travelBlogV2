@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bienvenu sur Travel Blog</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="../assets/css/styleBackEnd.min.css">
+    <link rel="stylesheet" href="../assets/css/responsiveStyle.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="mainBack">
+        <div class="loginConteneur registerPage">
+            <div class="imgHeader">
+                <img src="assets/images/img_39.jpg" alt="Image de...">
+            </div>
+            <div class="formConteneur">
+                <form action="register.php" method="post" class="formulaire login">
+                    <h2 class="title">S'enregistrer</h2>
+                    <div class="inputConteneur">
+                        <div class="input">
+                            <label for="name"> Nom : </label>
+                            <input type="text" name="name" id="name" class="inputBox"
+                                placeholder="silver">
+                        </div>
+                        <span class="errorMsg"></span>
+                    </div>
+                    <div class="inputConteneur">
+                        <div class="input">
+                            <label for="firstname"> Prénom :</label>
+                            <input type="text" name="firstname" id="firstname" class="inputBox" placeholder="Arrow">
+                        </div>
+                        <span class="errorMsg"></span>
+                    </div>
+                    <div class="inputConteneur">
+                        <div class="input">
+                            <label for="mail"> Email</label>
+                            <input type="mail" name="mail" id="mail" class="inputBox mail" placeholder="travelblog@gmail.com" required onblur=checkRecoveryData(this)>
+                        </div>
+                        <span class="errorMsg"></span>
+                    </div>
+                    <div class="inputConteneur">
+                        <div class="input">
+                            <label for="phone"> Téléphone :</label>
+                            <input type="tel" name="phone" id="phone" class="inputBox" placeholder="0471780502">
+                        </div>
+                        <span class="errorMsg"></span>
+                    </div>
+                    <div class="inputConteneur">
+                        <div class="input">
+                            <label for="pseudo"> Pseudo :</label>
+                            <input type="text" name="pseudo" id="pseudo" class="inputBox login" placeholder="Silverarrow2705" required onblur=checkLoginData(this)>
+                        </div>
+                        <span class="errorMsg"></span>
+                    </div>
+                    <div class="inputConteneur">
+                        <div class="input">
+                            <label for="password"> Mot de passe :</label>
+                            <input type="password" name="password" id="password" class="inputBox password" placeholder="*********" required onblur=checkpasswordData(this)>
+                        </div>
+                        <span class="errorMsg"></span>
+                    </div>
+                    <div class="inputConteneur">
+                        <div class="input">
+                            <label for="confirmPassword"> Confirmer mot de passe :</label>
+                            <input type="password" name="confirmPassword" id="confirmPassword" class="inputBox confirmPassword" placeholder="*********" required onblur=checkpasswordData(this)>
+                        </div>
+                        <span class="errorMsg"></span>
+                    </div>
+                    <div class="inputConteneur">
+                        <h2>S'inscrire à la newsletter ?</h2>
+                        <div class="checkContainer">
+                            <label for="yesToNewsletter">Oui</label>
+                            <input type="checkbox" name="yesToNewsletter" id="yesToNewsletter" class="check" checked>
+                        </div>
+                        <div class="checkContainer">
+                            <label for="noToNewsletter">Non</label>
+                            <input type="checkbox" name="noToNewsletter" id="noToNewsletter" class="check">
+                        </div>
+                    </div>
+                    <div class="submitBtnOrForget">
+                        <button type="submit" class="btn">S'enregistrer</button>
+                        <a href="login.html" class="formLink">Annuler</a>
+                    </div>
+                </form>
+                <p class="requiredText">* Ce champs est requis</p>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

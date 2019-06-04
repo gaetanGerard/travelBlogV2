@@ -5,7 +5,6 @@
 
 .mainBack {
     @include mainBack;
-
     // ! Style de la page de login
     .loginConteneur {
         @include loginContainer;
@@ -51,6 +50,16 @@
             }
         }
     }
-
     // ! Style de la page mot de passe ou pseudo oublier
+    .descriptionText {
+        text-align: center;
+        line-height: 0.9em;
+        margin: 20px auto;
+    }
+    .checkContainer {
+        display: grid;
+        grid-template-columns: 20% 20%;
+        justify-content: end;
+        margin-top: 5px;
+    }
 }

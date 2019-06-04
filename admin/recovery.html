@@ -18,32 +18,27 @@
                     <img src="assets/images/img_36.jpg" alt="Image de...">
                 </div>
                 <div class="formConteneur">
-                    <form action="login.php" method="post" class="formulaire login">
+                    <form action="recovery.php" method="post" class="formulaire login">
                         <h2 class="title">Connection</h2>
+                        <p class="descriptionText">Identifiant ou mot de passe oublié ? 
+                            renseigner votre adresse mail pour pouvoir les récupérer.
+                        </p>
                         <div class="inputConteneur">
                             <div class="input">
-                                <label for="pseudo"> Pseudo*</label>
-                                <input type="text" name="pseudo" id="pseudo" class="inputBox login" placeholder="silverarrow2705" required onblur=checkLoginData(this)>  
+                                <label for="mail"> Email</label>
+                                <input type="mail" name="mail" id="mail" class="inputBox mail" placeholder="travelblog@gmail.com" onblur=checkRecoveryData(this)>  
                             </div>
-                            <span class="errorMsg"></span>
-                        </div>
-                        <div class="inputConteneur">
-                            <div class="input">
-                                <label for="password"> Mot de passe*</label>
-                                <input type="password" name="password" id="password" class="inputBox password" placeholder="*********" required onblur=checkLoginData(this)>
-                            </div>
-                            <span class="errorMsg"></span>
+                            <span class="errorMsg">*** Just a dummy temporary text ***</span>
                         </div>
                         <div class="submitBtnOrForget">
-                            <button type="submit" class="btn">Se connecter</button>
-                            <p>Mot de passe ou pseudo oublier ? cliquer <a href="recovery.html" class="formLink">ICI</a> !</p>
-                            <a href="../index.html" class="formLink">Annuler</a>
+                            <button type="submit" class="btn">Récupérer</button>
+                            <a href="login.html" class="formLink">Annuler</a>
                         </div>
                     </form>
                     <p class="requiredText">* Ce champs est requis</p>
                 </div>
             </div>
         </div>
+        <script src="assets/js/script.js"></script>
     </body>
-    <script src="assets/js/script.js"></script>
 </html>

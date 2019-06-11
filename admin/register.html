@@ -19,7 +19,7 @@
                 <img src="assets/images/img_39.jpg" alt="Image de...">
             </div>
             <div class="formConteneur">
-                <form action="register.php" method="post" class="formulaire login">
+                <form action="" method="post" class="formulaire login" onsubmit="return valider()">
                     <h2 class="title">S'enregistrer</h2>
                     <div class="inputConteneur">
                         <div class="input">
@@ -39,7 +39,7 @@
                     <div class="inputConteneur">
                         <div class="input">
                             <label for="mail"> Email</label>
-                            <input type="mail" name="mail" id="mail" class="inputBox mail" placeholder="travelblog@gmail.com" required onblur=checkRecoveryData(this)>
+                            <input type="mail" name="mail" id="mail" class="inputBox mail" placeholder="travelblog@gmail.com"  onblur=checkRecoveryData(this)>
                         </div>
                         <span class="errorMsg"></span>
                     </div>
@@ -53,21 +53,21 @@
                     <div class="inputConteneur">
                         <div class="input">
                             <label for="pseudo"> Pseudo :</label>
-                            <input type="text" name="pseudo" id="pseudo" class="inputBox login" placeholder="Silverarrow2705" required onblur=checkLoginData(this)>
+                            <input type="text" name="pseudo" id="pseudo" class="inputBox login" placeholder="Silverarrow2705"  onblur=checkLoginData(this)>
                         </div>
                         <span class="errorMsg"></span>
                     </div>
                     <div class="inputConteneur">
                         <div class="input">
                             <label for="password"> Mot de passe :</label>
-                            <input type="password" name="password" id="password" class="inputBox password" placeholder="*********" required onblur=checkpasswordData(this)>
+                            <input type="password" name="password" id="password" class="inputBox password" placeholder="*********"  onblur=checkpasswordData(this)>
                         </div>
                         <span class="errorMsg"></span>
                     </div>
                     <div class="inputConteneur">
                         <div class="input">
                             <label for="confirmPassword"> Confirmer mot de passe :</label>
-                            <input type="password" name="confirmPassword" id="confirmPassword" class="inputBox confirmPassword" placeholder="*********" required onblur=checkpasswordData(this)>
+                            <input type="password" name="confirmPassword" id="confirmPassword" class="inputBox confirmPassword" placeholder="*********"  onblur=checkpasswordData(this)>
                         </div>
                         <span class="errorMsg"></span>
                     </div>
@@ -83,8 +83,8 @@
                         </div>
                     </div>
                     <div class="submitBtnOrForget">
-                        <button type="submit" class="btn">S'enregistrer</button>
-                        <a href="login.html" class="formLink">Annuler</a>
+                        <button type="submit" class="btn" id="submitBtn">S'enregistrer</button>
+                        <a href="../index.html" class="formLink">Annuler</a>
                     </div>
                 </form>
                 <p class="requiredText">* Ce champs est requis</p>

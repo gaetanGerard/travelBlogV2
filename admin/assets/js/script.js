@@ -2,6 +2,7 @@ let loginForm = document.getElementsByClassName("login");
 let inputBox = document.getElementsByClassName("inputBox");
 let input = document.getElementsByClassName("input");
 let pseudo = document.getElementById("pseudo");
+let submitBtn = document.getElementById("submitBtn");
 
 
 // * Fonction pour vérifier la validiter de l'email renseigner
@@ -20,17 +21,25 @@ let checkLoginData = (e) => {
     if(e.classList.contains("login") && e.value == "") {
         errorMsg.style.visibility = "visible";
         errorMsg.innerHTML = "Veuiller entrer votre pseudo !";
+        submitBtn.setAttribute("disabled", "disabled");
+        return false;
     } else if (e.classList.contains("login") && e.value !== "") {
         errorMsg.style.visibility = "hidden";
         errorMsg.innerHTML = "";
+        submitBtn.removeAttribute("disabled");
+        return true;
     }
 
     if (e.classList.contains("password") && e.value == "") {
         errorMsg.style.visibility = "visible";
         errorMsg.innerHTML = "Veuiller entrer votre Mot de passe !";
+        submitBtn.setAttribute("disabled", "disabled");
+        return false;
     } else if (e.classList.contains("password") && e.value !== "") {
         errorMsg.style.visibility = "hidden";
         errorMsg.innerHTML = "";
+        submitBtn.removeAttribute("disabled");
+        return true;
     }
 };
 
@@ -40,12 +49,18 @@ let checkRecoveryData = (e) => {
     if (e.classList.contains("mail") && e.value == "") {
         errorMsg.style.visibility = "visible";
         errorMsg.innerHTML = "Veuiller entrer votre adresse mail !";
+        submitBtn.setAttribute("disabled", "disabled");
+        return false;
     } else if (e.classList.contains("mail") && validate(e.value) == false) {
         errorMsg.style.visibility = "visible";
         errorMsg.innerHTML = "Veuiller entrer une adresse mail valide !";
+        submitBtn.setAttribute("disabled", "disabled");
+        return false;
     } else if (e.classList.contains("mail") && validate(e.value) == true && e.value !== "") {
         errorMsg.style.visibility = "hidden";
         errorMsg.innerHTML = "";
+        submitBtn.removeAttribute("disabled");
+        return true;
     }  
 };
 
@@ -59,17 +74,60 @@ let checkpasswordData = (e) => {
     if (e.classList.contains("password") && e.value == "") {
         errorMsg.style.visibility = "visible";
         errorMsg.innerHTML = "Veuiller entrer un mot de passe !";
+        submitBtn.setAttribute("disabled", "disabled");
+        return false;
     } else if (e.classList.contains("password") && e.value !== "") {
         errorMsg.style.visibility = "hidden";
         errorMsg.innerHTML = "";
+        submitBtn.removeAttribute("disabled");
+        return true;
     }
 
     if (e.classList.contains("confirmPassword") && password.value !== confirmPassword.value) {
         errorMsg.style.visibility = "visible";
         errorMsg.innerHTML = "Vos mots de passe doivent correspondre !";
+        submitBtn.setAttribute("disabled", "disabled");
+        return false;
     } else if (e.classList.contains("confirmPassword") && password.value == confirmPassword.value) {
         errorMsg.style.visibility = "hidden";
         errorMsg.innerHTML = "";
+        submitBtn.removeAttribute("disabled");
+        return true;
     }
 };
 // FIN de Fonction pour vérifier si le champs est vide lorsque l'utilisateur  quitte le champs
+
+// DEBUT de confirmation du formulaire
+
+let valider = () => {
+    let mail = document.getElementById("mail").value;
+    let pseudo = document.getElementById("pseudo").value; 
+    let password = document.getElementById("password").value; 
+    let confirmPassword = document.getElementById("confirmPassword").value; 
+
+
+    if (mail == "" || pseudo == "" || password == "" || confirmPassword == "" || password !== confirmPassword) {
+        return false;
+    }
+    return true;
+};
+
+// FIN de confirmation du formulaire
+
+
+// DEBUT d'animation du menu du back office
+
+let backOfficeNav = document.getElementById("backOfficeNav");
+let test = document.getElementById("test");
+
+let toggleMenu = () => {
+    if(backOfficeNav.classList.contains("sidebar")) {
+        backOfficeNav.classList.remove("sidebar");
+        test.style.gridTemplateColumns ="10.5em 1fr";
+    } else {
+        backOfficeNav.classList.add("sidebar");
+        test.style.gridTemplateColumns = "4.5em 1fr";
+    }
+}
+
+backOfficeNav.addEventListener("click", toggleMenu);

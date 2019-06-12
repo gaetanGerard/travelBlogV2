@@ -11,16 +11,156 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="main-grid-container" id="test">
-        <nav id="backOfficeNav" class="sidebar">
-            Navigation
+    <div class="main-grid-container" id="menu">
+        <nav id="backOfficeNav" class="close-sidebar">
+            
         </nav>
         <div class="grid-container">
             <header>
-                Header
+                <div class="hamburger" id="menuTrigger">
+                    <span></span>
+                </div>
+                <div class="navBar">
+                    <div class="navItem search dropdown">
+                        <a id="searchDropdown" href="#" class="navLink" role="button" data-toggle="dropdown"><i class="fas fa-search"></i></a>
+
+                    </div>
+                    <div class="navItem notification dropdown">
+                        <a id="notificationDropdown" href="#" class="navLink" role="button" data-toggle="dropdown"><i class="fas fa-bell"></i></a>
+                        
+                    </div>
+                    <div class="navItem message dropdown">
+                        <a id="messageDropdown" href="#" class="navLink" role="button" data-toggle="dropdown"><i class="fas fa-envelope"></i></a>
+                        
+                    </div>
+                    <div class="navItem profil dropdown">
+                        <a id="profilDropdown" href="#" class="navLink" role="button" data-toggle="dropdown">
+                            <img src="assets/images/me.jpg" alt="Image de..." class="profilImg">
+                        </a>
+                        
+                    </div>
+                </div>
             </header>
+            <div class="dropdown-menu-container toggleMenu" id="dropdownMenuContainer">
+                <div class="dropdownMenu searchForm toggleSubMenu" id="searchForm">
+                    <form action="search.php" method="post">
+                        <div class="inputGroup">
+                            <input type="search" name="search" id="search" placeholder="Rechercher...">
+                            <button type="submit"><i class="fas fa-search"></i></button>
+                        </div>
+                    </form>
+                </div>
+                <div class="dropdownMenu notificationMenu toggleSubMenu" id="notificationMenu">
+                    <h2 class="dropdown-title">Centre de notifications</h2>
+                    <ul class="dropdownList-container">
+                        <li class="dropdown-item">
+                            <a href="#" class="dropdown-link">
+                                <div class="iconOrImg success">
+                                    <i class="fas fa-file"></i>
+                                </div>
+                                <div class="dropdown-content">
+                                    <p class="time">December 12, 2019</p>
+                                    <h2 class="dropdownItem-title">A new monthly report is ready to download!</h2>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="dropdown-item">
+                            <a href="#" class="dropdown-link">
+                                <div class="iconOrImg primary">
+                                    <i class="fas fa-file"></i>
+                                </div>
+                                <div class="dropdown-content">
+                                    <p class="time">December 12, 2019</p>
+                                    <h2 class="dropdownItem-title">A new monthly report is ready to download!</h2>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="dropdown-item">
+                            <a href="#" class="dropdown-link">
+                                <div class="iconOrImg alert">
+                                    <i class="fas fa-file"></i>
+                                </div>
+                                <div class="dropdown-content">
+                                    <p class="time">December 12, 2019</p>
+                                    <h2 class="dropdownItem-title">A new monthly report is ready to download!</h2>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <a href="#" class="showMore">Montrer toute les notifications</a>
+                </div>
+                <div class="dropdownMenu messageMenu toggleSubMenu" id="messageMenu">
+                    <h2 class="dropdown-title">Centre de Messagerie</h2>
+                    <ul class="dropdownList-container">
+                        <li class="dropdown-item">
+                            <a href="#" class="dropdown-link">
+                                <div class="iconOrImg success">
+                                    <i class="fas fa-file"></i>
+                                </div>
+                                <div class="dropdown-content">
+                                    <p class="time">December 12, 2019</p>
+                                    <h2 class="dropdownItem-title">A new monthly report is ready to download!</h2>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="dropdown-item">
+                            <a href="#" class="dropdown-link">
+                                <div class="iconOrImg primary">
+                                    <i class="fas fa-file"></i>
+                                </div>
+                                <div class="dropdown-content">
+                                    <p class="time">December 12, 2019</p>
+                                    <h2 class="dropdownItem-title">A new monthly report is ready to download!</h2>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="dropdown-item">
+                            <a href="#" class="dropdown-link">
+                                <div class="iconOrImg alert">
+                                    <i class="fas fa-file"></i>
+                                </div>
+                                <div class="dropdown-content">
+                                    <p class="time">December 12, 2019</p>
+                                    <h2 class="dropdownItem-title">A new monthly report is ready to download!</h2>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="dropdown-item">
+                            <a href="#" class="dropdown-link">
+                                <div class="iconOrImg alert">
+                                    <i class="fas fa-file"></i>
+                                </div>
+                                <div class="dropdown-content">
+                                    <p class="time">December 12, 2019</p>
+                                    <h2 class="dropdownItem-title">A new monthly report is ready to download!</h2>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <a href="#" class="showMore">Montrer toute les messages</a>
+                </div>
+                <div class="dropdownMenu profilMenu toggleSubMenu" id="profilMenu">
+                    <ul class="dropdownList-container">
+                        <li class="dropdown-item">
+                            <a href="#" class="dropdown-link">
+                                <i class="fas fa-user"></i> Profile
+                            </a>
+                        </li>
+                        <li class="dropdown-item">
+                            <a href="#" class="dropdown-link">
+                                <i class="fas fa-cogs"></i> Paramètres
+                            </a>
+                        </li>
+                        <li class="dropdown-item">
+                            <a href="#" class="dropdown-link">
+                                <i class="fas fa-sign-out-alt"></i> Déconnection
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
             <main>
-                main content
+                
             </main>
         </div>
     </div>

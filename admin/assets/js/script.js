@@ -118,16 +118,40 @@ let valider = () => {
 // DEBUT d'animation du menu du back office
 
 let backOfficeNav = document.getElementById("backOfficeNav");
-let test = document.getElementById("test");
+let menu = document.getElementById("menu");
+let menuTrigger = document.getElementById("menuTrigger");
 
 let toggleMenu = () => {
-    if(backOfficeNav.classList.contains("sidebar")) {
-        backOfficeNav.classList.remove("sidebar");
-        test.style.gridTemplateColumns ="10.5em 1fr";
+    if(backOfficeNav.classList.contains("close-sidebar")) {
+        backOfficeNav.classList.remove("close-sidebar");
+        menu.style.gridTemplateColumns ="6.5em 1fr";
     } else {
-        backOfficeNav.classList.add("sidebar");
-        test.style.gridTemplateColumns = "4.5em 1fr";
+        backOfficeNav.classList.add("close-sidebar");
+        menu.style.gridTemplateColumns = "0 1fr";
     }
 }
 
-backOfficeNav.addEventListener("click", toggleMenu);
+menuTrigger.addEventListener("click", toggleMenu);
+
+// FIN d'animation du menu du back office
+
+// DEBUT du menu dropdown
+
+
+// ! Récupération des bouton déclencheur
+let searchButton = document.getElementById("searchDropdown");
+let notificationButton = document.getElementById("notificationDropdown");
+let messageButton = document.getElementById("messageDropdown");
+let profileButton = document.getElementById("profilDropdown");
+
+// ! Récupération du containeur principal dropdown
+
+let dropdownMenuContainer = document.getElementById("dropdownMenuContainer");
+
+// ! Récupération des sous élément du dropdown container
+
+let searchForm = document.getElementById("searchForm");
+let notificationMenu = document.getElementById("notificationMenu");
+let messageMenu = document.getElementById("messageMenu");
+let profilMenu = document.getElementById("profilMenu");
+
